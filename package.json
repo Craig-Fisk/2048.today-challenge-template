@@ -1,0 +1,15 @@
+{
+  "name": "tfetchallenge",
+  "version": "1.0.0",
+  "description": "Example repo for running the 2048.Today challenge",
+  "main": "index.js",
+  "scripts": {
+    "start": "cypress run --headed --no-exit",
+    "dev": "cypress open --e2e"
+  },
+  "author": "Craig Fisk <fisk.craig@gmail.com>",
+  "license": "CC-BY-NC-4.0",
+  "dependencies": {
+    "cypress": "^12.5.1"
+  }
+}
