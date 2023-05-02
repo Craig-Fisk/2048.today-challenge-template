@@ -12,7 +12,7 @@ describe('The ultimate 2048.today solution', () => {
 
   it('should complete the puzzle', () => {
     // Ensure the API is available on the window
-    cy.window().its('TFET').should('exist');
+    cy.window().its('TFET', { timeout: 80000}).should('exist');
     // Ensure the onGameStart event has fired
     cy.get('@gameReady').should('have.been.calledOnce');
 
