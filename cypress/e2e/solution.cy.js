@@ -3,7 +3,9 @@ describe('The ultimate 2048.today solution', () => {
   beforeEach(() => {
     cy.visit('https://2048.today', {
       onBeforeLoad (win) {
-        cy.window().invoke('addEventListener', 'onGameStart', cy.stub().as('gameReady'))
+        cy.window().invoke('addEventListener', 'onGameStart', cy.stub().as('gameReady'));
+        win.localStorage.setItem('sfxVolume', 0);
+        win.localStorage.setItem('musicVolume', 0);
       }
     })
   })
@@ -16,6 +18,8 @@ describe('The ultimate 2048.today solution', () => {
 
     // Run the algorithm
     cy.window().then((win) => {
+      win.localStorage.setItem('sfxVolume', 0);
+      win.localStorage.setItem('musicVolume', 0);
       // Randomly pick a direction to swipe
         const pickNext = () => {
           const min = 0;
